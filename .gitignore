@@ -1,0 +1,5 @@
+.pyre
+.pyre_configuration
+backup/
+proto/
+resources/

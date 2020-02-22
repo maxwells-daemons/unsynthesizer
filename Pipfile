@@ -1,0 +1,32 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+black = "*"
+flake8 = "*"
+ipykernel = "*"
+isort = "*"
+jedi = "*"
+jupyter = "*"
+pyre-check = "*"
+neovim = "*"
+pycodestyle = "*"
+pydocstyle = "*"
+pyflakes = "*"
+pylint = "*"
+pynvim = "*"
+PyAudio = "*"
+numpy = "*"
+scipy = "*"
+aubio = "*"
+matplotlib = "*"
+
+[requires]
+python_version = "3.8"
+
+[pipenv]
+allow_prereleases = true
