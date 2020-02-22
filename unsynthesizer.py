@@ -16,8 +16,8 @@ CHUNK_SIZE: int = 6144
 CHUNK_SECONDS: float = CHUNK_SIZE / SAMPLE_RATE
 DETECTION_THRESHOLD: float = 0.001
 FILTER_DEFS: Dict[str, Tuple[int, int]] = {
-    "a": (2400, 2500),
-    "b": (4300, 4500),
+    "a": (2450, 2500),
+    "b": (4300, 4400),
 }
 COOLDOWN: float = 0.75
 
