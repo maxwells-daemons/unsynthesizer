@@ -14,16 +14,16 @@ import pyautogui
 SAMPLE_RATE: int = 44100
 CHUNK_SIZE: int = 6144
 CHUNK_SECONDS: float = CHUNK_SIZE / SAMPLE_RATE
-DETECTION_THRESHOLD: float = 0.001
+DETECTION_THRESHOLD: float = 0.0015
 FILTER_DEFS: Dict[str, Tuple[int, int]] = {
-    "a": (13000, 13500),  # Or, finer: 13100 - 134000
-    "b": (14500, 15500),
-    "c": (17400, 17700),
-    "d": (16600, 16700),
-    "e": (8200, 8400),
-    "f": (11500, 11700),
-    "Space": (4300, 4400),  # Small steel medium
-    "Enter": (2450, 2500),  # Big steel long
+    "e": (2500, 2600),
+    "!": (2900, 3000),
+    "k": (3400, 3500),
+    "m": (12500, 13000),
+    "a": (7500, 8000),
+    "Enter": (19000, 20000),
+    #  "Space": (4300, 4400),  # Small steel medium
+    #  "Enter": (2450, 2500),  # Big steel long
 }
 COOLDOWN: float = 0.75
 
@@ -96,7 +96,7 @@ def main() -> None:
                 key_idx = powers.argmax()
                 key = keys[key_idx]
                 print(f"{key}: {max_power}")
-                pyautogui.typewrite([key])
+                #  pyautogui.typewrite([key])
         else:
             global_cooldown -= CHUNK_SECONDS
 
