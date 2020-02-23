@@ -87,18 +87,18 @@ def main() -> None:
         signal_chunk = np.frombuffer(data_bytes, dtype=np.float32, count=n_vals)
 
         powers = np.asarray(list(key_powers(signal_chunk)))
+        max_power = powers.max()
 
         if global_cooldown <= 0:
-            max_power = powers.max()
-
             if max_power > DETECTION_THRESHOLD:
                 global_cooldown = COOLDOWN
                 key_idx = powers.argmax()
                 key = keys[key_idx]
                 print(f"{key}: {max_power}")
-                #  pyautogui.typewrite([key])
+                pyautogui.typewrite([key])
         else:
-            global_cooldown -= CHUNK_SECONDS
+            if max_power < DETECTION_THRESHOLD:
+                global_cooldown -= CHUNK_SECONDS
 
         # Plot power chart
         ax_barplot.clear()
