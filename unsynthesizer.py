@@ -7,8 +7,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import scipy.signal
 
-import aubio
 import pyaudio
+import pyautogui
 
 # Constants
 SAMPLE_RATE: int = 44100
@@ -84,9 +84,7 @@ def main() -> None:
         if n_vals == 0:
             raise KeyboardInterrupt
 
-        signal_chunk = np.frombuffer(
-            data_bytes, dtype=aubio.float_type, count=n_vals
-        )
+        signal_chunk = np.frombuffer(data_bytes, dtype=np.float32, count=n_vals)
 
         powers = np.asarray(list(key_powers(signal_chunk)))
 
@@ -98,6 +96,7 @@ def main() -> None:
                 key_idx = powers.argmax()
                 key = keys[key_idx]
                 print(f"{key}: {max_power}")
+                pyautogui.typewrite([key])
         else:
             global_cooldown -= CHUNK_SECONDS
 

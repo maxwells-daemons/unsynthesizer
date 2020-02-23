@@ -24,6 +24,7 @@ numpy = "*"
 scipy = "*"
 aubio = "*"
 matplotlib = "*"
+pyautogui = "*"
 
 [requires]
 python_version = "3.8"
